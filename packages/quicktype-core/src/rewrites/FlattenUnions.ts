@@ -62,7 +62,7 @@ export function flattenUnions(
         graph.allTypesUnordered(),
         (t) => t instanceof UnionType,
     ) as Set<UnionType>;
-    const nonCanonicalUnions = setFilter(allUnions, (u) => !u.isCanonical);
+    const nonCanonicalUnions = setFilter(allUnions, (u) => !u.isCanonical && u.members.size == 1);
     let foundIntersection = false;
     const groups = makeGroupsToFlatten(nonCanonicalUnions, (members) => {
         messageAssert(members.size > 0, "IRNoEmptyUnions", {});
