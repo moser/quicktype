@@ -1,4 +1,4 @@
 import {Convert} from "./play-gen";
 
 
-console.log(Convert.bazToJson({"fooOrBar": {"name": "hello", "size": 123}}))
+console.log(Convert.toBaz(`{"fooOrBar": {"name": "hello", "size": 123}}`))
